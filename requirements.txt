@@ -1,0 +1,9 @@
+python
+ultralytics
+cv2
+tensorflow
+keras
+numpy
+pandas
+matplotlib
+
