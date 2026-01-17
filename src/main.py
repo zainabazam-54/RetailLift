@@ -1,14 +1,15 @@
 import cv2
-from src.detector import PersonDetector
-from src.classifier import ShopliftingClassifier
-from src.pipeline import ShopliftingPipeline
+from detector import PersonDetector
+
+from classifier import ShopliftingClassifier
+from pipeline import ShopliftingPipeline
 
 
 detector=PersonDetector("src/models/best (2).pt")
 classifier=ShopliftingClassifier("src/models/efficientNetModel.h5")
 pipeline=ShopliftingPipeline(detector,classifier)
 
-cap = cv2.VideoCapture("src/Normal (6).mp4")
+cap = cv2.VideoCapture("src/Shoplifting (8).mp4")
 
 
 print("Video opened:", cap.isOpened())

@@ -50,6 +50,7 @@ class ShopliftingPipeline:
                 (x1, y1 - 10),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.6,
+                
                 color,
                 2
             )
