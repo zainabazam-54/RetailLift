@@ -4,7 +4,7 @@ import tensorflow as tf
 
 class ShopliftingClassifier:
     def __init__(self,model_path,threshold=0.5): #constructor
-        self.model=tf.keras.models.load_model("src/models/efficientNetModel.h5")
+        self.model=tf.keras.models.load_model("src/models/classificationModel.h5")
         self.threshold=threshold  #ignore threshold below this value
 
     def preprocess_frame(self,img):
