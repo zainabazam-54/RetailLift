@@ -1,8 +1,8 @@
 import cv2
-from detector import PersonDetector
+from src.detector import PersonDetector
 
-from classifier import ShopliftingClassifier
-from pipeline import ShopliftingPipeline
+from src.classifier import ShopliftingClassifier
+from src.pipeline import ShopliftingPipeline
 
 
 detector=PersonDetector("src/models/best (2).pt")
@@ -14,6 +14,8 @@ cap = cv2.VideoCapture("src/Shoplifting (8).mp4")
 
 print("Video opened:", cap.isOpened())
 
+frame_number = 0
+
 while cap.isOpened():
     ret,frame=cap.read()
     if not ret:
@@ -21,6 +23,8 @@ while cap.isOpened():
 
     frame=pipeline.process_frame(frame)
     cv2.imshow("Shoplifting Detection",frame)
+
+    frame_number += 1
 
     if cv2.waitKey(25) & 0xFF==ord('q'):
         break
